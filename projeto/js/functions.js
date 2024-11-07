@@ -1,6 +1,9 @@
 function salvarOS() {
-               
+    
+    let exibe = document.getElementById('divPrin').value;
+    
     let titulo = document.getElementById("cliente").value;
+
 
     let texto = 'Teste:<br>'  +  
     'Cliente: '       + tedocument.getElementById("cliente").value   + '<br>' +
@@ -11,7 +14,10 @@ function salvarOS() {
     'Valor Total: '   + document.getElementById("valorT").value      + '<br>' +
     'Dt. Encomenda: ' + document.getElementById("dtenc").value       + '<br>' +
     'Dt. Entrega: '   + document.getElementById("dtEntrega").value   + '<br>' ;
-                
+
+    exibe.innerHTML = "<p>" + titulo + texto +"</p>"+ "\n";
+     
+    //return document.write('<div>'+ titulo + texto +'</div>');
 
 
-        }
+    }
