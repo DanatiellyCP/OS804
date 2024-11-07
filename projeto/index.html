@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>OS Encomendas</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>OS</h2>
+        <form action="/action_page.php">
+          <div class="form-group">
+            <label for="cliente">Cliente:</label>
+            <input type="cliente" class="form-control" id="cliente" placeholder="Entre com cliente" name="cliente">
+          </div>
+          <div class="form-group">
+            <label for="produto">Teste:</label>
+            <input type="produto" class="form-control" id="produto" placeholder="Entre com produto" name="produto">
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input type="descricao" class="form-control" id="descricao" placeholder="Entre com Descrição" name="descricao">
+          </div>
+          <div class="form-group">
+            <label for="qtd">Quantidade:</label>
+            <input type="qtd" class="form-control" id="qtd" placeholder="Entre Quantidade" name="qtd">
+          </div>
+        <div class="form-group">
+          <label for="valorU">Valor Unitário:</label>
+          <input type="valorU" class="form-control" id="valorU" placeholder="Entre Valor Unitario" name="valorU">
+        </div>
+        <div class="form-group">
+            <label for="valorT">Valor Total:</label>
+            <input type="valorT" class="form-control" id="valorT" placeholder="Valor Total" name="valorT">
+        </div>
+
+        <div class="form-group">
+            <label for="dtenc">Dt. Encomenda:</label>
+            <input type="dtenc" class="form-control" id="dtenc" placeholder="Data da Encomenda" name="dtenc">
+
+            <label for="dtEntrega">Dt. Entrega::</label>
+            <input type="dtEntrega" class="form-control" id="dtEntrega" placeholder="Data da Entrega" name="dtEntrega">
+        </div>
+          <button onclick="salvarOS()">Salvar</button>
+        </form>
+      </div>  
+      
+    <!-- Biblioteca que adicionara o código -->
+    <script type="text/javascript" src="js/FileSaver.js"></script>
+    <!-- função ao clicar em salvar -->
+      <script>
+        function salvarOS() {
+            //lib https://github.com/eligrey/FileSaver.js
+            let titulo = document.getElementById("cliente").value;
+
+           let texto = 'Teste:<br>'  +  
+           'Cliente: '       + tedocument.getElementById("cliente").value   + '<br>' +
+           'Produto: '       + document.getElementById("produto").value     + '<br>' +
+           'Descrição: '     + document.getElementById("desecricao").value  + '<br>' +
+           'Qtd. Prod.: '    + document.getElementById("qtd").value         + '<br>' +
+           'Valor Unitário: '+ document.getElementById("valorU").value      + '<br>' +
+           'Valor Total: '   + document.getElementById("valorT").value      + '<br>' +
+           'Dt. Encomenda: ' + document.getElementById("dtenc").value       + '<br>' +
+           'Dt. Entrega: '   + document.getElementById("dtEntrega").value   + '<br>' ;
+            
+            let blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+            FileSaver.saveAs(blob, titulo + ".txt");
+
+            //alert('OS Salva com Sucesso');
+
+
+        }
+    </script>
+    
+</body>
+</html>
