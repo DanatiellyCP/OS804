@@ -50,32 +50,7 @@
         </form>
       </div>  
       
-    <!-- Biblioteca que adicionara o código -->
-    <script type="text/javascript" src="js/FileSaver.js"></script>
-    <!-- função ao clicar em salvar -->
-      <script>
-        function salvarOS() {
-            //lib https://github.com/eligrey/FileSaver.js
-            let titulo = document.getElementById("cliente").value;
-
-           let texto = 'Teste:<br>'  +  
-           'Cliente: '       + tedocument.getElementById("cliente").value   + '<br>' +
-           'Produto: '       + document.getElementById("produto").value     + '<br>' +
-           'Descrição: '     + document.getElementById("desecricao").value  + '<br>' +
-           'Qtd. Prod.: '    + document.getElementById("qtd").value         + '<br>' +
-           'Valor Unitário: '+ document.getElementById("valorU").value      + '<br>' +
-           'Valor Total: '   + document.getElementById("valorT").value      + '<br>' +
-           'Dt. Encomenda: ' + document.getElementById("dtenc").value       + '<br>' +
-           'Dt. Entrega: '   + document.getElementById("dtEntrega").value   + '<br>' ;
-            
-            let blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-            FileSaver.saveAs(blob, titulo + ".txt");
-
-            //alert('OS Salva com Sucesso');
-
-
-        }
-    </script>
+    
     
 </body>
 </html>
