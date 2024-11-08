@@ -7,6 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <script src="js/functions.js"></script>
+
     <title>OS Encomendas</title>
 </head>
 <body>
@@ -14,50 +16,48 @@
     <div class="container">
         <h2>OS 804</h2>
 
-        <form action="">
+        <form>
+          <div class="form-group">
+            <label for="empresa">Empresa:</label>
+            <input type="text" class="form-control" id="empresa" placeholder="Entre com a empresa" name="empresa">
+          </div>
+
           <div class="form-group">
             <label for="cliente">Cliente:</label>
-            <input type="cliente" class="form-control" id="cliente" placeholder="Entre com cliente" name="cliente">
+            <input type="text" class="form-control" id="cliente" placeholder="Entre com cliente" name="cliente">
           </div>
           <div class="form-group">
-            <label for="produto">Teste:</label>
-            <input type="produto" class="form-control" id="produto" placeholder="Entre com produto" name="produto">
+            <label for="produto">Produto:</label>
+            <input type="text" class="form-control" id="produto" placeholder="Entre com produto" name="produto">
           </div>
           <div class="form-group">
             <label for="descricao">Descrição:</label>
-            <input type="descricao" class="form-control" id="descricao" placeholder="Entre com Descrição" name="descricao">
+            <input type="text" class="form-control" id="descricao" placeholder="Entre com descrição" name="descricao">
           </div>
           <div class="form-group">
             <label for="qtd">Quantidade:</label>
-            <input type="qtd" class="form-control" id="qtd" placeholder="Entre Quantidade" name="qtd">
+            <input type="number" class="form-control" id="qtd" placeholder="Entre quantidade" name="qtd">
           </div>
-        <div class="form-group">
-          <label for="valorU">Valor Unitário:</label>
-          <input type="valorU" class="form-control" id="valorU" placeholder="Entre Valor Unitario" name="valorU">
-        </div>
-        <div class="form-group">
+          <div class="form-group">
+            <label for="valorU">Valor Unitário:</label>
+            <input type="number" step="0.01" class="form-control" id="valorU" placeholder="Entre valor unitário" name="valorU">
+          </div>
+          <div class="form-group">
             <label for="valorT">Valor Total:</label>
-            <input type="valorT" class="form-control" id="valorT" placeholder="Valor Total" name="valorT">
-        </div>
-
-        <div class="form-group">
+            <input type="text" class="form-control" id="valorT" placeholder="Valor total" name="valorT" readonly>
+          </div>
+          <div class="form-group">
             <label for="dtenc">Dt. Encomenda:</label>
-            <input type="dtenc" class="form-control" id="dtenc" placeholder="Data da Encomenda" name="dtenc">
+            <input type="date" class="form-control" id="dtenc" name="dtenc">
+          </div>
+          <div class="form-group">
+            <label for="dtEntrega">Dt. Entrega:</label>
+            <input type="date" class="form-control" id="dtEntrega" name="dtEntrega">
+          </div>
 
-            <label for="dtEntrega">Dt. Entrega::</label>
-            <input type="dtEntrega" class="form-control" id="dtEntrega" placeholder="Data da Entrega" name="dtEntrega">
-        </div>
+          <button type="button" onclick="enviarDados()">Enviar</button>
          
         </form>
       </div>  
-      
-      <div>
-          <p id="divPrin"> Texto aqui </p>
-      </div>
-
-      <button align="center" onclick="salvarOS()">Salvar</button>
-    
-      
-    
 </body>
 </html>
