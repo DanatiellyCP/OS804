@@ -16,7 +16,7 @@ function enviarDados() {
     const DtEntrega = document.getElementById("dtEntrega").value;   
 
     // Salva os dados no SessionStorage
-    sessionStorage.setItem("Empresa", Empresa)
+    sessionStorage.setItem("Empresa", Empresa);
     sessionStorage.setItem("Cliente", Cliente);
     sessionStorage.setItem("Produto", Produto);
     sessionStorage.setItem("Descricao", Descricao);
@@ -32,7 +32,7 @@ function enviarDados() {
 
 function exibirDados() {
     // Recupera os dados do SessionStorage
-    const Empresa = sessionStorage.getItem("empresa"); 
+    const Empresa = sessionStorage.getItem("Empresa"); 
     const Cliente = sessionStorage.getItem("Cliente");   
     const Produto = sessionStorage.getItem("Produto");     
     const Descricao = sessionStorage.getItem("Descricao");
